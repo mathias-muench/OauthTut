@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: broker
+data:
+    OT_LOGLEVEL: DEBUG
+    OT_CLIENT_ID: <client_id from okta>
+    OT_OKTA_DOMAIN: <domain from okta, e.g. "https://dev-00309686.okta.com">
+    OAUTHLIB_INSECURE_TRANSPORT: 1
