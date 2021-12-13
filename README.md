@@ -4,6 +4,10 @@
 
 Playground for handling JWT tokens from identity provider.
 
+Right now it implements a flow as like this.
+
+![Oauth and JWT token flow](flow.svg)
+
 ## Usage
 
 Need to have an application and a user in [Home \| Okta

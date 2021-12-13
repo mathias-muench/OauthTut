@@ -1,0 +1,21 @@
+@startuml
+
+!theme plain
+
+Browser -> Portal : Login Page
+Browser <- Portal : Redirect to authorization server
+Browser -> "Authorization Server" : Authorization code request to /authorize
+Browser <- "Authorization Server" : Redirect to authentication prompt
+Browser -> "Authorization Server" : Authentication and consent
+Browser <- "Authorization Server" : Authorization code response
+Browser -> "Authorization Server" : Send authorization code and client secret to /token
+Browser <- "Authorization Server" : Access token (JWT)
+Browser -> Portal : Request with access token (JWT) in cookie
+Browser <- Portal : Response
+Browser -> Broker : Request with access token (JWT) in cookie
+Broker -> Device : Request
+Broker <- Device : Response
+Browser <- Broker : Response
+
+
+@enduml
