@@ -11,8 +11,10 @@ Browser <- "Authorization Server" : Authorization code response
 Browser -> "Authorization Server" : Send authorization code and client secret to /token
 Browser <- "Authorization Server" : Access token (JWT)
 Browser -> Portal : Request with access token (JWT) in cookie
+Portal -> Portal: Locally validates JWT token
 Browser <- Portal : Response
 Browser -> Broker : Request with access token (JWT) in cookie
+Broker -> Broker: Locally validates JWT token
 Broker -> Device : Request
 Broker <- Device : Response
 Browser <- Broker : Response
