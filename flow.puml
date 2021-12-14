@@ -5,7 +5,7 @@
 Browser -> Portal : Login Page
 Browser <- Portal : Redirect to authorization server
 Browser -> "Authorization Server" : Authorization code request to /authorize
-Browser <- "Authorization Server" : Redirect to authentication prompt
+Browser <- "Authorization Server" : Respond with authentication prompt
 Browser -> "Authorization Server" : Authentication and consent
 Browser <- "Authorization Server" : Redirect to callback page
 Browser -> Portal : Forward authorization code in URL
