@@ -7,9 +7,11 @@ Browser <- Portal : Redirect to authorization server
 Browser -> "Authorization Server" : Authorization code request to /authorize
 Browser <- "Authorization Server" : Redirect to authentication prompt
 Browser -> "Authorization Server" : Authentication and consent
-Browser <- "Authorization Server" : Authorization code response
-Browser -> "Authorization Server" : Send authorization code and client secret to /token
-Browser <- "Authorization Server" : Access token (JWT)
+Browser <- "Authorization Server" : Redirect to callback page
+Browser -> Portal : Forward authorization code in URL
+Portal -> "Authorization Server" : Send authorization code and client secret to /token
+Portal <- "Authorization Server" : Access token (JWT)
+Browser <- Portal : Redirect to portal page with JWT in set cookie
 Browser -> Portal : Request with access token (JWT) in cookie
 Portal -> Portal: Locally validates JWT token
 Browser <- Portal : Response
