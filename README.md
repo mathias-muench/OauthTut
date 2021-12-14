@@ -1,6 +1,6 @@
 # OAuth Tutorial
 
-## Intruduction
+## Introduction
 
 Playground for handling JWT tokens from identity provider.
 
